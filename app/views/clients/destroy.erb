@@ -1,0 +1,39 @@
+<h1>Are you sure you want to delete this client?</h1>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @client.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @client.last_name %>
+</p>
+
+<p>
+  <strong>Telephone Number:</strong>
+  <%= @client.telephone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @client.DOB %>
+</p>
+
+<p>
+  <strong>Dietary Requirement:</strong>
+  <%= @client.dietary_requirement %>
+</p>
+
+<%= form_with(model: @client, url: client_path(@client), method: :delete, local: true) do %>
+  <div class="actions">
+    <%= form.submit 'Delete Client' %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', client_path(@client) %>

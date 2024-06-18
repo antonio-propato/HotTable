@@ -7,4 +7,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :clients do
+    member do
+      get 'confirm_destroy'
+    end
+  end
 end

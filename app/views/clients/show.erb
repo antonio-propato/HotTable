@@ -1,0 +1,21 @@
+<h1>Client Details</h1>
+  <p>
+    <strong>First Name:</strong> <%= @client.first_name.capitalize %><br>
+    <strong>Last Name:</strong> <%= @client.last_name.capitalize %><br>
+    <strong>Telephone Number:</strong> <%= @client.telephone_number %><br>
+    <strong>Email:</strong> <%= @client.email %><br>
+    <strong>Date of Birth:</strong>
+      <% if @client.DOB %>
+        <%= @client.DOB.strftime("%d-%m-%Y") %>
+      <% else %>
+        N/A
+      <% end %>
+    <br>
+    <strong>Dietary Requirement:</strong> <%= @client.dietary_requirement %>
+    <br>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %> |
+<%= link_to 'Delete', client_path(@client), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
