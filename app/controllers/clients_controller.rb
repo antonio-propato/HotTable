@@ -1,8 +1,7 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: %i[show edit update destroy]
-
+  before_action :set_client, only: [:show, :edit, :update, :destroy]
   def index
-    @clients = Client.all
+    @clients = Client.order('LOWER(first_name)')
   end
 
   def show
@@ -10,9 +9,6 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
-  end
-
-  def edit
   end
 
   def create
@@ -23,6 +19,9 @@ class ClientsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def update

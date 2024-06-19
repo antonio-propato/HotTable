@@ -1,6 +1,6 @@
 <% @clients.each do |client| %>
-  <%= link_to "#{client.first_name} #{client.last_name}", client %> <br>
-<% end %>
+  <%= link_to "#{client.first_name.capitalize} #{client.last_name.capitalize}", client %> <br>
+<% end %> <br>
 
 
 <%= link_to 'New Client', new_client_path %>
