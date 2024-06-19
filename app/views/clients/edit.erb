@@ -41,6 +41,10 @@
     <%= form.text_field :dietary_requirement %>
   </div>
 
+  <div class="field">
+    <%= form.label :table_preferences %>
+    <%= form.select :table_preferences, ['Window', 'Mezzanine', 'Corner'], prompt: 'Select an option' %>
+
   <div class="actions">
     <%= form.submit 'Update Client' %>
   </div>
