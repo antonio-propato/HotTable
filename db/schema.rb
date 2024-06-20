@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_20_104637) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_20_163728) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_20_104637) do
     t.integer "capacity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "opening_time_mon"
+    t.time "closing_time_mon"
+    t.time "opening_time_tue"
+    t.time "closing_time_tue"
+    t.time "opening_time_wed"
+    t.time "closing_time_wed"
+    t.time "opening_time_thu"
+    t.time "closing_time_thu"
+    t.time "opening_time_fri"
+    t.time "closing_time_fri"
+    t.time "opening_time_sat"
+    t.time "closing_time_sat"
+    t.time "opening_time_sun"
+    t.time "closing_time_sun"
     t.index ["email"], name: "index_restaurants_on_email", unique: true
     t.index ["telephone"], name: "index_restaurants_on_telephone", unique: true
   end

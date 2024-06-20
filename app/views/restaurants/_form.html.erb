@@ -41,6 +41,76 @@
     <%= form.number_field :capacity %>
   </div>
 
+  <div class="field">
+    <%= form.label :opening_time_mon %>
+    <%= form.time_field :opening_time_mon, value: form.object.opening_time_mon&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_mon %>
+    <%= form.time_field :closing_time_mon, value: form.object.closing_time_mon&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_tue %>
+    <%= form.time_field :opening_time_tue, value: form.object.opening_time_tue&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_tue %>
+    <%= form.time_field :closing_time_tue, value: form.object.closing_time_tue&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_wed %>
+    <%= form.time_field :opening_time_wed, value: form.object.opening_time_wed&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_wed %>
+    <%= form.time_field :closing_time_wed, value: form.object.closing_time_wed&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_thu %>
+    <%= form.time_field :opening_time_thu, value: form.object.opening_time_thu&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_thu %>
+    <%= form.time_field :closing_time_thu, value: form.object.closing_time_thu&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_fri %>
+    <%= form.time_field :opening_time_fri, value: form.object.opening_time_fri&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_fri %>
+    <%= form.time_field :closing_time_fri, value: form.object.closing_time_fri&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_sat %>
+    <%= form.time_field :opening_time_sat, value: form.object.opening_time_sat&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_sat %>
+    <%= form.time_field :closing_time_sat, value: form.object.closing_time_sat&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening_time_sun %>
+    <%= form.time_field :opening_time_sun, value: form.object.opening_time_sun&.strftime('%d %b %Y') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closing_time_sun %>
+    <%= form.time_field :closing_time_sun, value: form.object.closing_time_sun&.strftime('%d %b %Y') %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

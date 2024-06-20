@@ -25,5 +25,46 @@
   <%= @restaurant.capacity %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<table>
+  <tr>
+    <th>Day</th>
+    <th>Opening Time</th>
+    <th>Closing Time</th>
+  </tr>
+  <tr>
+    <td>Monday</td>
+    <td><%= @restaurant.opening_time_mon.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_mon.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <td>Tuesday</td>
+    <td><%= @restaurant.opening_time_tue.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_tue.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <td>Wednesday</td>
+    <td><%= @restaurant.opening_time_wed.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_wed.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <td>Thursday</td>
+    <td><%= @restaurant.opening_time_thu.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_thu.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <td>Friday</td>
+    <td><%= @restaurant.opening_time_fri.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_fri.strftime("%H:%M") %></td>
+  </tr>
+  <tr>
+    <td>Saturday</td>
+    <td><%= @restaurant.opening_time_sat.strftime("%H:%M") %></td>
+    <td><%= @restaurant.closing_time_sat.strftime("%H:%M") %></td>
+  </tr>
+</table>
+<br>
+<p>
+  <%= link_to "Edit", edit_restaurant_path(@restaurant) %>
+  <%= link_to "Back", restaurants_path %>
+
+</p>
