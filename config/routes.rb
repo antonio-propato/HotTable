@@ -13,4 +13,7 @@ Rails.application.routes.draw do
       get 'confirm_destroy'
     end
   end
+
+  resources :restaurants
+
 end
