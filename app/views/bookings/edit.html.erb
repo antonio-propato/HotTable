@@ -1,0 +1,35 @@
+<!-- app/views/bookings/edit.html.erb -->
+<h1>Edit Booking</h1>
+
+<%= form_with(model: @booking, url: url_for([@restaurant || @client, @booking]), local: true) do |form| %>
+  <div class="field">
+    <%= form.label :booking_size %>
+    <%= form.number_field :booking_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_date %>
+    <%= form.date_field :booking_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_time %>
+    <%= form.time_field :booking_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_length %>
+    <%= form.number_field :booking_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bid_amount %>
+    <%= form.number_field :bid_amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', @restaurant ? restaurant_path(@restaurant) : client_path(@client) %>

@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_size: 1
+  booking_date: 2024-06-20
+  booking_time: 2024-06-20 19:17:54
+  booking_length: 1
+  booking_type: MyString
+  booking_price: 9.99
+  booking_status: MyString
+  special_requests: MyString
+  client: one
+  bid: one
+  restaurant: one
+
+two:
+  booking_size: 1
+  booking_date: 2024-06-20
+  booking_time: 2024-06-20 19:17:54
+  booking_length: 1
+  booking_type: MyString
+  booking_price: 9.99
+  booking_status: MyString
+  special_requests: MyString
+  client: two
+  bid: two
+  restaurant: two

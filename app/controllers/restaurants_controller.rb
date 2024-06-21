@@ -8,6 +8,10 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1
   def show
+    @restaurant = Restaurant.find(params[:id])
+    @clients = Client.all
+    @booking = Booking.new
+    @bookings = @restaurant.bookings.includes(:client) # Eager load clients for bookings
   end
 
   # GET /restaurants/new

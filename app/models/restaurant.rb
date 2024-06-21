@@ -10,4 +10,11 @@ class Restaurant < ApplicationRecord
             :opening_time_wed, :closing_time_wed, :opening_time_thu, :closing_time_thu,
             :opening_time_fri, :closing_time_fri, :opening_time_sat, :closing_time_sat,
             :opening_time_sun, :closing_time_sun, presence: true
+
+
+  has_many :bookings, dependent: :destroy
+  has_many :tables, dependent: :destroy  # Assuming restaurants can have multiple tables
+  has_many :time_slots, dependent: :destroy  # Assuming restaurants can have multiple time slots
+
+
 end

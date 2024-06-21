@@ -1,19 +1,61 @@
-<h1><%= @client.first_name.capitalize%> <%= @client.last_name.capitalize %></h1>
-  <p>
-    <strong>Telephone Number:</strong> <%= @client.telephone_number %><br>
-    <strong>Email:</strong> <%= @client.email %><br>
-    <strong>Date of Birth:</strong>
-      <% if @client.DOB %>
-        <%= @client.DOB.strftime("%d-%m-%Y") %>
-      <% else %>
-        N/A
-      <% end %>
-    <br>
-    <strong>Dietary Requirements:</strong> <%= @client.dietary_requirement %> <br>
-    <strong>Table Preferences:</strong> <%= @client.table_preferences %> <br>
+<!-- app/views/clients/show.html.erb -->
+<h1><%= @client.first_name %> <%= @client.last_name %></h1>
 
+<p>
+  <strong>Telephone number:</strong>
+  <%= @client.telephone_number %>
+</p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %> |
-<%= link_to 'Delete', client_path(@client), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+<p>
+  <strong>DOB:</strong>
+  <%= @client.DOB %>
+</p>
+
+<p>
+  <strong>Dietary requirement:</strong>
+  <%= @client.dietary_requirement %>
+</p>
+
+<p>
+<strong>Table Preferences:</strong>
+<%= @client.table_preferences %>
+</p>
+
+<%= link_to 'Edit Client', edit_client_path(@client) %> |
+<%= link_to 'Back to Clients', clients_path %> <br><br>
+
+<h2>Bookings</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant</th>
+      <th>Size</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Length</th>
+      <th>Bid Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.restaurant.restaurant_name %></td>
+        <td><%= booking.booking_size %></td>
+        <td><%= booking.booking_date %></td>
+        <td><%= booking.booking_time %></td>
+        <td><%= booking.booking_length %> hours</td>
+        <td><%= number_to_currency(booking.bid_amount) %></td>
+        <td>
+          <%= link_to 'Edit', edit_client_booking_path(@client, booking) %>
+          <%= link_to 'Delete', client_booking_path(@client, booking), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

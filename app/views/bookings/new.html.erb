@@ -1,16 +1,5 @@
-<!-- app/views/restaurants/show.html.erb -->
-<h1><%= @restaurant.restaurant_name %></h1>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.city %></p>
-<p><%= @restaurant.telephone %></p>
-<p><%= @restaurant.email %></p>
-<p>Capacity: <%= @restaurant.capacity %></p>
+<h1>New Booking for <%= @restaurant.restaurant_name %></h1>
 
-<br>
-<%= link_to 'Back to Restaurants', restaurants_path %>
-<br><br>
-
-<h2>Make a Booking</h2>
 <%= form_with(model: [@restaurant, @booking], local: true) do |form| %>
   <div class="field">
     <%= form.label :booking_size %>

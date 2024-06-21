@@ -1,0 +1,67 @@
+<%= form_with(model: booking, local: true) do |form| %>
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :booking_date %>
+    <%= form.date_field :booking_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_time %>
+    <%= form.time_field :booking_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_length %>
+    <%= form.number_field :booking_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :restaurant_id %>
+    <%= form.collection_select :restaurant_id, Restaurant.all, :id, :restaurant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_type %>
+    <%= form.text_field :booking_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_price %>
+    <%= form.number_field :booking_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booking_status %>
+    <%= form.text_field :booking_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :special_requests %>
+    <%= form.text_area :special_requests %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.collection_select :client_id, Client.all, :id, :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bid_id %>
+    <%= form.collection_select :bid_id, Bid.all, :id, :id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
