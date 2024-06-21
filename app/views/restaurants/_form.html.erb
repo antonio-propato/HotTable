@@ -1,3 +1,5 @@
+<!-- app/views/restaurants/edit.html.erb -->
+
 <%= form_with(model: restaurant, local: true) do |form| %>
   <% if restaurant.errors.any? %>
     <div id="error_explanation">
@@ -11,106 +13,74 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :restaurant_name %>
-    <%= form.text_field :restaurant_name %>
-  </div>
+  <table>
+    <tr>
+      <td><%= form.label :restaurant_name %></td>
+      <td><%= form.text_field :restaurant_name %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :city %></td>
+      <td><%= form.text_field :city %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :address %></td>
+      <td><%= form.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :telephone %></td>
+      <td><%= form.number_field :telephone %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :email %></td>
+      <td><%= form.email_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :capacity %></td>
+      <td><%= form.number_field :capacity %></td>
+    </tr>
+    <tr>
+      <th>Day</th>
+      <th>Opening Time</th>
+      <th>Closing Time</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td><%= form.time_field :opening_time_mon, value: form.object.opening_time_mon&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_mon, value: form.object.closing_time_mon&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td><%= form.time_field :opening_time_tue, value: form.object.opening_time_tue&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_tue, value: form.object.closing_time_tue&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td><%= form.time_field :opening_time_wed, value: form.object.opening_time_wed&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_wed, value: form.object.closing_time_wed&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td><%= form.time_field :opening_time_thu, value: form.object.opening_time_thu&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_thu, value: form.object.closing_time_thu&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td><%= form.time_field :opening_time_fri, value: form.object.opening_time_fri&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_fri, value: form.object.closing_time_fri&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td><%= form.time_field :opening_time_sat, value: form.object.opening_time_sat&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_sat, value: form.object.closing_time_sat&.strftime('%H:%M') %></td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td><%= form.time_field :opening_time_sun, value: form.object.opening_time_sun&.strftime('%H:%M') %></td>
+      <td><%= form.time_field :closing_time_sun, value: form.object.closing_time_sun&.strftime('%H:%M') %></td>
+    </tr>
+  </table>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :telephone %>
-    <%= form.number_field :telephone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :capacity %>
-    <%= form.number_field :capacity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_mon %>
-    <%= form.time_field :opening_time_mon, value: form.object.opening_time_mon&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_mon %>
-    <%= form.time_field :closing_time_mon, value: form.object.closing_time_mon&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_tue %>
-    <%= form.time_field :opening_time_tue, value: form.object.opening_time_tue&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_tue %>
-    <%= form.time_field :closing_time_tue, value: form.object.closing_time_tue&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_wed %>
-    <%= form.time_field :opening_time_wed, value: form.object.opening_time_wed&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_wed %>
-    <%= form.time_field :closing_time_wed, value: form.object.closing_time_wed&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_thu %>
-    <%= form.time_field :opening_time_thu, value: form.object.opening_time_thu&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_thu %>
-    <%= form.time_field :closing_time_thu, value: form.object.closing_time_thu&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_fri %>
-    <%= form.time_field :opening_time_fri, value: form.object.opening_time_fri&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_fri %>
-    <%= form.time_field :closing_time_fri, value: form.object.closing_time_fri&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_sat %>
-    <%= form.time_field :opening_time_sat, value: form.object.opening_time_sat&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_sat %>
-    <%= form.time_field :closing_time_sat, value: form.object.closing_time_sat&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :opening_time_sun %>
-    <%= form.time_field :opening_time_sun, value: form.object.opening_time_sun&.strftime('%d %b %Y') %>
-  </div>
-
-  <div class="field">
-    <%= form.label :closing_time_sun %>
-    <%= form.time_field :closing_time_sun, value: form.object.closing_time_sun&.strftime('%d %b %Y') %>
-  </div>
-
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>

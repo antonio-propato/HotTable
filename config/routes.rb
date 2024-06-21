@@ -1,12 +1,17 @@
-# config/routes.rb
 Rails.application.routes.draw do
   resources :restaurants do
-    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+    resources :bookings
+    resources :tables
+    resources :time_slots
   end
 
   resources :clients do
-    resources :bookings, only: [:edit, :update, :destroy]
+    resources :bids
   end
+
+  resources :bids
+  resources :bookings
+  resources :tables
 
   root "restaurants#index"
 end

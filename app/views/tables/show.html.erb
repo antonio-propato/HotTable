@@ -1,0 +1,19 @@
+<h1>Table</h1>
+
+<p>
+  <strong>Table Number:</strong>
+  <%= @table.table_number %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @table.capacity %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @table.restaurant.restaurant_name %>
+</p>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>
